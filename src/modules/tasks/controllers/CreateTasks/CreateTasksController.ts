@@ -32,8 +32,12 @@ export class CreateTasksController implements IController {
     const { id, name, description, favorite, created_at, updated_at } =
       request.body;
 
-    if (!name) {
-      throw new AppException("Name body is empty", 400, "MissingBody");
+    if (!name || !description) {
+      throw new AppException(
+        "Name or Description is empty",
+        400,
+        "MissingBody"
+      );
     }
 
     const data: ICreateTasksDTO = {

@@ -19,7 +19,7 @@ export class CreateTasksUseCase {
       _id: data._id || uuidV4(),
       name: data.name,
       description: data.description,
-      favorite: false,
+      favorite: data.favorite || false,
       created_at: data.created_at || currentDate,
       updated_at: data.updated_at || currentDate,
     };
