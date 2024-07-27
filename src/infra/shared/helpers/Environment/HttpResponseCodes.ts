@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppException } from "../../exceptions";
 import { IResponse } from "../protocols";
 
