@@ -7,7 +7,7 @@ import {
 import { inject, injectable } from "tsyringe";
 import { AppException } from "../../../../infra/shared/exceptions";
 import { created } from "../../../..//infra/shared/helpers/Environment/HttpResponseCodes";
-import { ICreateTasksUseCase } from "../../useCases/CreateTask";
+import { ICreateTasksUseCase } from "../../useCases/CreateTasks";
 import { ICreateTasksDTO } from "../../dtos/ITasksDTO";
 
 type RequestType = {

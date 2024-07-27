@@ -9,7 +9,7 @@ import { MongoTasksRepository } from "../repositories/MongoTasksRepositories";
 import {
   CreateTasksUseCase,
   ICreateTasksUseCase,
-} from "../useCases/CreateTask";
+} from "../useCases/CreateTasks";
 
 // Repositories
 container.registerSingleton<ITasksRepository>(
