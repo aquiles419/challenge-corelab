@@ -42,6 +42,13 @@ export class MongoTasksRepository implements ITasksRepository {
   ): Promise<Tasks[]> {
     const skip = (filters.page - 1) * filters.per;
 
-    return this.ormRepository.find().skip(skip).limit(filters.per);
+    const favoriteTasks = await this.ormRepository.find({ favorite: true });
+
+    const noFavoriteTasks = await this.ormRepository
+      .find({ favorite: false })
+      .skip(skip)
+      .limit(filters.per);
+
+    return favoriteTasks.concat(noFavoriteTasks);
   }
 }
