@@ -6,7 +6,6 @@ import cors from "cors";
 import { Environment } from "./shared/helpers/Environment";
 import { Handler } from "./shared/exceptions";
 
-// config();
 const app = express();
 
 app.use(cors());
