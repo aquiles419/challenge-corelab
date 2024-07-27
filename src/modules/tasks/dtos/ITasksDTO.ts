@@ -17,3 +17,8 @@ export interface ICreateTasksDTO {
 }
 
 export type IUpdateTaskssDTO = Partial<ICreateTasksDTO> & { _id: string };
+
+export interface IListTasksFilters {
+  per: number;
+  page: number;
+}

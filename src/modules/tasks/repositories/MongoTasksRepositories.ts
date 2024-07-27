@@ -1,7 +1,11 @@
 import { getModelForClass, ReturnModelType } from "@typegoose/typegoose";
 
 import { Tasks } from "../schemas/tasks";
-import { ICreateTasksDTO, IUpdateTaskssDTO } from "../dtos/ITasksDTO";
+import {
+  ICreateTasksDTO,
+  IListTasksFilters,
+  IUpdateTaskssDTO,
+} from "../dtos/ITasksDTO";
 import { ITasksRepository } from "./ITasksRepository";
 
 export class MongoTasksRepository implements ITasksRepository {
@@ -31,5 +35,13 @@ export class MongoTasksRepository implements ITasksRepository {
 
   public async delete(id: string): Promise<void> {
     await this.ormRepository.deleteOne({ _id: id });
+  }
+
+  public async findAllWithFilters(
+    filters: IListTasksFilters
+  ): Promise<Tasks[]> {
+    const skip = (filters.page - 1) * filters.per;
+
+    return this.ormRepository.find().skip(skip).limit(filters.per);
   }
 }

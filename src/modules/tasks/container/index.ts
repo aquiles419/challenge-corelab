@@ -10,6 +10,7 @@ import {
   CreateTasksUseCase,
   ICreateTasksUseCase,
 } from "../useCases/CreateTasks";
+import { ILisTasksUseCase, ListTasksUseCase } from "../useCases/ListTasks";
 
 // Repositories
 container.registerSingleton<ITasksRepository>(
@@ -21,4 +22,9 @@ container.registerSingleton<ITasksRepository>(
 container.registerSingleton<ICreateTasksUseCase>(
   "CreateTasksUseCase",
   CreateTasksUseCase
+);
+
+container.registerSingleton<ILisTasksUseCase>(
+  "ListTasksUseCase",
+  ListTasksUseCase
 );
