@@ -1,0 +1,6 @@
+services:
+  mongo:
+    image: mongo:5
+    container_name: api-tasks
+    ports:
+      - 27018:27017 # Mapeia a porta 27018 do host para a porta 27017 do contêiner
