@@ -11,6 +11,8 @@ import {
   ICreateTasksUseCase,
 } from "../useCases/CreateTasks";
 import { ILisTasksUseCase, ListTasksUseCase } from "../useCases/ListTasks";
+import { IDeleteTasksUseCase } from "../useCases/DeleteTasks/IDeleteTasksUseCase";
+import { DeleteTasksUseCase } from "../useCases/DeleteTasks/DeleteTasksUseCase";
 
 // Repositories
 container.registerSingleton<ITasksRepository>(
@@ -27,4 +29,9 @@ container.registerSingleton<ICreateTasksUseCase>(
 container.registerSingleton<ILisTasksUseCase>(
   "ListTasksUseCase",
   ListTasksUseCase
+);
+
+container.registerSingleton<IDeleteTasksUseCase>(
+  "DeleteTasksUseCase",
+  DeleteTasksUseCase
 );
