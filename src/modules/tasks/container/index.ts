@@ -13,6 +13,8 @@ import {
 import { ILisTasksUseCase, ListTasksUseCase } from "../useCases/ListTasks";
 import { IDeleteTasksUseCase } from "../useCases/DeleteTasks/IDeleteTasksUseCase";
 import { DeleteTasksUseCase } from "../useCases/DeleteTasks/DeleteTasksUseCase";
+import { IUpdateTasksUseCase } from "../useCases/UpdateTasks/IUpdateTasksUseCase";
+import { UpdateTasksUseCase } from "../useCases/UpdateTasks/UpdateTasksUseCase";
 
 // Repositories
 container.registerSingleton<ITasksRepository>(
@@ -34,4 +36,9 @@ container.registerSingleton<ILisTasksUseCase>(
 container.registerSingleton<IDeleteTasksUseCase>(
   "DeleteTasksUseCase",
   DeleteTasksUseCase
+);
+
+container.registerSingleton<IUpdateTasksUseCase>(
+  "UpdateTasksUseCase",
+  UpdateTasksUseCase
 );

@@ -20,6 +20,7 @@ export class CreateTasksUseCase {
       name: data.name,
       description: data.description,
       favorite: data.favorite || false,
+      color: data.color || "",
       created_at: data.created_at || currentDate,
       updated_at: data.updated_at || currentDate,
     };

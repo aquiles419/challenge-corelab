@@ -3,6 +3,7 @@ export interface ITasksDTO {
   name: string;
   description: string;
   favorite?: boolean;
+  color?: string;
   created_at: Date;
   updated_at: Date;
 }
@@ -12,11 +13,12 @@ export interface ICreateTasksDTO {
   name: string;
   description: string;
   favorite?: boolean;
+  color?: string;
   created_at: Date;
   updated_at: Date;
 }
 
-export type IUpdateTaskssDTO = Partial<ICreateTasksDTO> & { _id: string };
+export type IUpdateTasksDTO = Partial<ICreateTasksDTO> & { _id: string };
 
 export interface IListTasksFilters {
   per: number;

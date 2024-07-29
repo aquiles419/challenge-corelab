@@ -34,6 +34,9 @@ export class Tasks {
   public favorite: boolean;
 
   @prop()
+  public color: string;
+
+  @prop()
   public created_at: Date;
 
   @prop()

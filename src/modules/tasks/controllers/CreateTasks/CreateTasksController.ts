@@ -16,6 +16,7 @@ type RequestType = {
     name: string;
     description?: string;
     favorite?: boolean;
+    color: string;
     created_at?: Date;
     updated_at?: Date;
   };
@@ -29,7 +30,7 @@ export class CreateTasksController implements IController {
   ) {}
 
   async handle(request: IRequest<RequestType>): Promise<IResponse> {
-    const { id, name, description, favorite, created_at, updated_at } =
+    const { id, name, description, favorite, color, created_at, updated_at } =
       request.body;
 
     if (!name || !description) {
@@ -45,6 +46,7 @@ export class CreateTasksController implements IController {
       name,
       description,
       favorite,
+      color,
       created_at,
       updated_at,
     };
